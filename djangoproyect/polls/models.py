@@ -22,8 +22,10 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):              # __unicode__ on Python 2
         return self.choice_text
-    
-class prueba(models.Model):
-    prueba = models.CharField(max_length = 200)
+
+class Answer(models.Model):
+    """docstring for answer"""
+    answer_text = models.CharField(max_length=200)
     def __str__(self):
-        return self.prueba
+        return self.answer_text
+        

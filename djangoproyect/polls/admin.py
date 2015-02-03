@@ -17,19 +17,12 @@
 
 #Ejemplo numero 2
 from django.contrib import admin
-from polls.models import Choice, Question
-from polls.models import prueba
+from polls.models import Choice, Question, Answer
 
 
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 3
-
-class estaPrueba(admin.ModelAdmin):
-    fielsets = [
-                ('Esta es una prueba', {'Campo prueba':['prueba']})                
-                ]
-
 
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -41,5 +34,14 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ('question_text', 'pub_date', 'was_published_recently')
     list_filter = ['pub_date']
     search_fields = ['question_text']
+
+class AnswerAdmin(admin.ModelAdmin):
+    """Administrador del sitio AnswerAdmin"""
+    fieldsets = [
+        ('Respuesta', {'Esta es una respuesta':['answer_text']}),
+        ('Como se asocia', {'Campos de pregunta': ['question_text']})
+    ]
+        
+
 
 admin.site.register(Question, QuestionAdmin)
