@@ -1,2 +1,0 @@
-# SoftCode
-Repositorio para pruebas
