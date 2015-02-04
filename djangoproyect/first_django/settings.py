@@ -37,7 +37,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',
-    'dynamic_forms'
+    'dynamic_forms',
+    'formulario'
 )
 
 MIDDLEWARE_CLASSES = (
