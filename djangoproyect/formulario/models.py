@@ -17,4 +17,3 @@ class Persona(models.Model):
 	)
 	genero = models.CharField(max_length=1,choices=tipos_genero)
 	direccion = models.TextField(max_length=500)
-
