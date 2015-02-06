@@ -1,4 +1,17 @@
+#!/usr/bin/python
+# -*- coding: latin-1 -*-
 # Django settings for tango_project project.
+
+import os
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
+PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+
+# Rutas para los templates
+TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
+
+# Rutas para los archivos estaticos
+STATIC_PATH  = os.path.join(PROJECT_PATH, 'static')
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -72,6 +85,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    STATIC_PATH,
 )
 
 # List of finder classes that know how to find static files in
@@ -111,6 +125,8 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    # Tiene que ser la ruta absoluta
+    TEMPLATE_PATH,
 )
 
 INSTALLED_APPS = (
